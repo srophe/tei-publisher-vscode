@@ -27,7 +27,7 @@ export class Srophe extends Registry {
                 filter = 'persName';
                 break;
         }
-        const response = await axios.get(`https://usaybia.net/api/search/${filter}?q=${encodeURIComponent(key)}`);
+        const response = await axios.get(`https://syriaca.org/api/search/${filter}?q=${encodeURIComponent(key)}`);
         if (response.status !== 200) {
             return {
                 totalItems: 0,
@@ -43,7 +43,7 @@ export class Srophe extends Registry {
                     label: item.placeName
                 }; 
                 results.push(result);       
-            } else if ((this._register === 'term' )) {
+            } else if ((this._register === 'terms' )) {
                 const result:RegistryResultItem = {
                     register: this._register,
                     id: item.id,

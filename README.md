@@ -49,7 +49,8 @@ System | Keybinding
 ![TEI Entity Explorer](media/screen-entity.gif)
 
 ## Configuration
-
+### Srophe Authority VSCode 
+Updated from TEI Publisher to include Srophe/Usaybia specific lookup functions. 
 ### TEI Publisher instance
 
 The _teipublisher.endpoint_ configuration property defines the HTTP or HTTPS URL the extension will communicate with to retrieve HTML previews. By default this points to a public TEI Publisher instance available on `https://teipublisher.com/exist/apps/tei-publisher`.

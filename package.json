@@ -1,12 +1,12 @@
 {
-  "name": "tei-publisher-vscode",
-  "displayName": "tei-publisher-vscode",
+  "name": "sropheAuthority-vscode",
+  "displayName": "sropheAuthority-vscode",
   "description": "Visual Studio Code extension to support TEI editing",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eeditiones/tei-publisher-vscode.git"
+    "url": "https://github.com/srophe/tei-publisher-vscode.git"
   },
-  "publisher": "e-editiones",
+  "publisher": "srophe",
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "engines": {
@@ -187,25 +187,25 @@
             {
               "name": "places",
               "label": "Places",
-              "plugin": "srophe",
+              "plugin": "usaybia",
               "template": "<placeName ref=\"${id}\">${0:$TM_SELECTED_TEXT}</placeName>"
             },
             {
               "name": "people",
               "label": "People",
-              "plugin": "srophe",
+              "plugin": "usaybia",
               "template": "<persName ref=\"${id}\">${0:$TM_SELECTED_TEXT}</persName>"
             },
             {
               "name": "terms",
               "label": "Terms",
               "plugin": "srophe",
-              "template": "<term ref=\"${id}\">${0:$TM_SELECTED_TEXT}</term>"
+              "template": "${id}"
             },
             {
               "name": "organisations",
               "label": "Organisations",
-              "plugin": "srophe",
+              "plugin": "usaybia",
               "template": "<orgName ref=\"${id}\">${0:$TM_SELECTED_TEXT}</orgName>"
             }
           ]

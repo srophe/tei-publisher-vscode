@@ -3,7 +3,8 @@
 All notable changes to the "tei-publisher-vscode" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
+## Changed extension name 
+Changed to sropheAuthorities, to prevent issues with updates. Code still uses tei-publisher-vscode extension functions. 
 ## [1.0.1] - 2020-12-22
 
 ### Fixed

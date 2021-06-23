@@ -28,6 +28,9 @@ export class KBGA extends Registry {
             case 'terms':
                 label = 'fullLabel';
                 break;
+            case 'abbreviations':
+                label = 'label';
+                break;
             default:
                 label = 'persName_full';
                 break;
@@ -49,7 +52,7 @@ export class KBGA extends Registry {
             results.push(result);
         });
         return {
-            totalItems: json.meta.pagination.total,
+            totalItems: json.meta.total,
             items: results
         };
     }

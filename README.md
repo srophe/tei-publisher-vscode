@@ -117,11 +117,28 @@ Variable | Description
 
 Within `template` you can also use vscode snippet parameters, e.g. `$0` to place the cursor at a certain position after inserting the text. `${0:$TM_SELECTED_TEXT}` will either insert the text selection or position the cursor if nothing is selected.
 
+Connectors may also take additional configuration parameters in property `options`, which takes an arbitrary JSON object. Currently only the [metagrid](https://metagrid.ch/) connector uses this feature. *metagrid* is a meta-service, incorporating different authorities. You can thus pass a configuration property `providers` to define a prioritized list of authorities to use. The entry ID of the first authority providing a result will be used. For example, you may prefer your entities to be linked *helveticat* where available and fall back to *gnd* otherwise:
+
+```json
+{
+    "name": "people",
+    "label": "People",
+    "plugin": "gnd",
+    "template": "<persName ref=\"${id}\">${0:$TM_SELECTED_TEXT}</persName>",
+    "options": {
+        "providers": [
+            "helveticat",
+            "gnd"
+        ]
+    }
+}
+```
+
 ## Recommended Extensions
 
 If you combine this with other extensions available on the vscode marketplace, you get rather decent XML editing support - not as sophisticated as with oXygen, but good enough for some serious work. 
 
-For schema-based validation and context sensitive suggestions one can choose between two extensions: [Scholary XML](https://marketplace.visualstudio.com/items?itemName=raffazizzi.sxml) is lightweight and provides nice suggestions with documentation. It only understands relax-ng though and does not support catalogs, which means you need to reference the schema via a processing instruction in every TEI file. The second option, [XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml), supports XML schema and catalogs, which you can use to associate the TEI namespace with a schema once and for all. On the downside, it uses more system resources as it starts a background Java process.
+For schema-based validation and context sensitive suggestions one can choose between two extensions: [Scholary XML](https://marketplace.visualstudio.com/items?itemName=raffazizzi.sxml) is lightweight and provides nice suggestions with documentation. It only understands relax-ng though and does not support catalogs, which means you need to reference the schema via a processing instruction in every TEI file. The second option, [XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml), supports XML schema and catalogs, which you can use to associate the TEI namespace with a schema once and for all. Earlier versions required Java, but this is now optional and can be switched off (see config option `xml.server.preferBinary`).
 
 To set up a catalog, just create a file `catalog.xml` somewhere with e.g. the following content and change the vscode configuration property `xml.catalogs` to point to it:
 
